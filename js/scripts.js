@@ -5,7 +5,7 @@ var userInput = "";
 var translator = function(userInput){
   var firstChar = userInput[0];
   if (vowels.search(firstChar)>=0) {
-    return userInput;
+    return userInput + "way";
   };
 };
 
