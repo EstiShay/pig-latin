@@ -16,10 +16,14 @@ var translator = function(userInput){
       }
     }
     var consonants = userArray.slice(0, vowelPosition);
+    var checkingY = consonants.slice(1,consonants.length);
+    if (checkingY.includes('y')) {
+      alert("found y");
+      //When 'y' found, need to change consonants to only be the characters before the 'y', and move the 'y' and everything after it back to the beginning of userArray.
+    }
+
     var consString = consonants.join('')
     userArray.splice(0, consonants.length);
-    alert(consString);
-    alert(userArray);
     if ((consString[consString.length - 1] === 'q') && (userArray[0] === 'u')) {
       userArray.shift();
       consString += "u";
