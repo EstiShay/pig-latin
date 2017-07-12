@@ -18,6 +18,13 @@ var translator = function(userInput){
     var consonants = userArray.slice(0, vowelPosition);
     var consString = consonants.join('')
     userArray.splice(0, consonants.length);
+    alert(consString);
+    alert(userArray);
+    if ((consString[consString.length - 1] === 'q') && (userArray[0] === 'u')) {
+      userArray.shift();
+      consString += "u";
+    }
+
     userArray.splice(userArray.length, 0, consString);
     userArray.splice(userArray.length, 0, "ay");
     var consOutput = userArray.join('');
