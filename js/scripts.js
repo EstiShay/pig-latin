@@ -1,6 +1,14 @@
+
+var vowels = "aeiouAEIOU";
+var userInput = "";
+
 var translator = function(userInput){
-  return userInput;
+  var firstChar = userInput[0];
+  if (vowels.search(firstChar)>=0) {
+    return userInput;
+  };
 };
+
 
 
 
@@ -9,7 +17,7 @@ var translator = function(userInput){
 $(function() {
   $("#pig-latin").submit(function(event){
     event.preventDefault();
-    var userInput = $("#rawtext").val();
+    userInput = $("#rawtext").val();
     var result = translator(userInput);
     $("#output").append(result);
   });
