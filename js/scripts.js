@@ -13,9 +13,15 @@ var translator = function(userInput){
       if (vowels.search(userArray[index]) > -1) {
         vowelPosition = [index];
         vowelFound = true;
-        alert(vowelPosition);
       }
     }
+    var consonants = userArray.slice(0, vowelPosition);
+    var consString = consonants.join('')
+    userArray.splice(0, consonants.length);
+    userArray.splice(userArray.length, 0, consString);
+    userArray.splice(userArray.length, 0, "ay");
+    var consOutput = userArray.join('');
+    return consOutput;
   }
 };
 
